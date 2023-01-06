@@ -77,8 +77,10 @@ function send_request() {
   let tile_third_product = title_product[2].innerText;
 
   const enabled_send_request = document.querySelector(".btn-bottom-bar-custom");
+  const name = prompt("Informe seu nome e sobrenome:");
+  const address = prompt("Informe seu endereço:");
 
-  if (enabled_send_request !== null) {
+  if (enabled_send_request !== null && name !== null && address !== null) {
     let custom_message =
       "Olá, gostaria de fazer o pedido:" +
       "\n" +
@@ -92,7 +94,13 @@ function send_request() {
       tile_third_product +
       "\n" +
       "Total: R$ " +
-      total_price();
+      total_price() +
+      "\n\n" +
+      "Nome: " +
+      name +
+      "\n" +
+      "Endereço: " +
+      address;
 
     open(
       "https://wa.me/" +
